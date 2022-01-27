@@ -5,26 +5,32 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    private float velocity = 5f;
-    private float horizontalInput;
-    private float verticalInput;
+    private Vector3 movement;
+    private Quaternion rotation = Quaternion.identity;
+    private float turnSpeed = 20f;
+    private float moveSpeed = 5f;
 
     private void Start()
     {
-        rigidbody = gameObject.GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();        
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
-        Movement();    
-    }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-    private void Movement()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical"); 
+        movement.Set(horizontal, 0f, vertical);
+        movement.Normalize();
 
-        Vector3 movementVector = new Vector3(horizontalInput * velocity, 0, verticalInput * velocity);
-        rigidbody.AddForce(movementVector * (velocity * Time.deltaTime), ForceMode.Impulse);
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput; 
+       
+        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, movement, turnSpeed * Time.deltaTime, 0f);
+        rotation = Quaternion.LookRotation(desiredForward);
+
+        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.deltaTime);
+        rigidbody.MoveRotation(rotation);
     }
 }
