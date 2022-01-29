@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    [SerializeField] private Transform cam;
+    private Rigidbody rb;
     private Vector3 movement;
     private Quaternion rotation = Quaternion.identity;
+    private LayerMask groundLayer;
     private float turnSpeed = 20f;
+    private float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
     private float moveSpeed = 5f;
+    private float jumpForce = 5f;
+    private bool isGrounded;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();        
+        rb = GetComponent<Rigidbody>();        
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -23,14 +29,37 @@ public class PlayerMovement : MonoBehaviour
         movement.Set(horizontal, 0f, vertical);
         movement.Normalize();
 
+        float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput; 
        
-        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, movement, turnSpeed * Time.deltaTime, 0f);
-        rotation = Quaternion.LookRotation(desiredForward);
+        if (isWalking)
+        {
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            rb.MovePosition(rb.position + moveDir.normalized * moveSpeed * Time.deltaTime);
+        }
 
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.deltaTime);
-        rigidbody.MoveRotation(rotation);
+        // jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == groundLayer)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 }
