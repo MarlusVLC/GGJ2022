@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private Vector3 movement;
     private Quaternion rotation = Quaternion.identity;
-    private float turnSpeed = 20f;
+    private LayerMask groundLayer;
+    private float turnSpeed = 21f;
     private float moveSpeed = 5f;
+    private float jumpForce = 5f;
+    private bool isGrounded;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();        
+        rb = GetComponent<Rigidbody>();        
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -30,7 +33,26 @@ public class PlayerMovement : MonoBehaviour
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, movement, turnSpeed * Time.deltaTime, 0f);
         rotation = Quaternion.LookRotation(desiredForward);
 
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.deltaTime);
-        rigidbody.MoveRotation(rotation);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        rb.MoveRotation(rotation);
+
+        // jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == groundLayer)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 }
