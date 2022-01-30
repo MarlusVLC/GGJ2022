@@ -18,7 +18,7 @@ namespace Entities
             // {
             //     blinkEffects = GetComponentsInChildren<BlinkEffect>();
             // }
-        } 
+        }
 
         protected override void Die()
         {

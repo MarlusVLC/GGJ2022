@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private GameObject cone;
+    [SerializeField] private Animator animator;
     [SerializeField] private float attackSpeed;
     private bool isAttacking;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(Attack());
         }
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Attack()
     {
         isAttacking = true;
+        animator.SetTrigger("Attack");
         yield return new WaitForSeconds(attackSpeed);
         isAttacking = false;
     }

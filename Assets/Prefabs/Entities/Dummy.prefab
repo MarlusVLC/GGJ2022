@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+--- !u!1 &7983473897779911862
+=======
 --- !u!1 &3944551491695593211
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +12,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  - component: {fileID: 7750461764708099814}
+  - component: {fileID: 8333369920804999908}
+  - component: {fileID: 7332827346114821782}
+  - component: {fileID: 1083921179798219110}
+  m_Layer: 0
+  m_Name: Capsule
+=======
   - component: {fileID: 5071033203477536502}
   - component: {fileID: 1872849676469819393}
   - component: {fileID: 1925342642432460705}
   m_Layer: 0
   m_Name: Sphere
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+--- !u!4 &7750461764708099814
+=======
 --- !u!4 &5071033203477536502
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 7983473897779911862}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 2467960922549236396}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &8333369920804999908
+=======
   m_GameObject: {fileID: 3944551491695593211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,20 +61,31 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1872849676469819393
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 7983473897779911862}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7332827346114821782
+=======
   m_GameObject: {fileID: 3944551491695593211}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1925342642432460705
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 7983473897779911862}
+=======
   m_GameObject: {fileID: 3944551491695593211}
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,12 +120,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+--- !u!136 &1083921179798219110
+CapsuleCollider:
+=======
 --- !u!1 &8476896582512873635
+GameObject:
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 7983473897779911862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8349719860032430755
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2467960922549236396}
+  - component: {fileID: 7766143951279308225}
+  - component: {fileID: 1951987808705548535}
+  m_Layer: 0
+  m_Name: Key
+  m_TagString: Keys
+=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3111490991574097293}
@@ -96,16 +164,47 @@ GameObject:
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+--- !u!4 &2467960922549236396
+=======
 --- !u!4 &3111490991574097293
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 8349719860032430755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7750461764708099814}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7766143951279308225
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349719860032430755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1951987808705548535
+=======
   m_GameObject: {fileID: 8476896582512873635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.653753, y: 7.386699, z: 13.826036}
@@ -116,15 +215,23 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5432080727637466581
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Prefabs/Objects/Key.prefab
+  m_GameObject: {fileID: 8349719860032430755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cfa70106c8d904baac6dfd8e44007f, type: 3}
+=======
   m_GameObject: {fileID: 8476896582512873635}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 592619410e5d35d4a85b67ee0f1a7340, type: 3}
+>>>>>>> Stashed changes:Assets/Prefabs/Entities/Dummy.prefab
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 3

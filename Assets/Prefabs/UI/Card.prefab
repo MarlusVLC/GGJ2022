@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4658064791815105882}
   - component: {fileID: 1036636821}
   - component: {fileID: 6649020325665847724}
-  - component: {fileID: 2972994949713041406}
+  - component: {fileID: 5013579733159102683}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -214,7 +214,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2972994949713041406
+--- !u!114 &5013579733159102683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,9 +223,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4658064791815105880}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 0.38314515, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: 2}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -5, y: 5}
   m_UseGraphicAlpha: 1
