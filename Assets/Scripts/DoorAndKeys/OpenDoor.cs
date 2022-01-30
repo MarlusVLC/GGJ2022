@@ -6,15 +6,11 @@ public class OpenDoor : MonoBehaviour
 {
     [SerializeField] private int KeysToCollect;
     [SerializeField] private bool doorIsOpen = false;
-    private CollectKeys collectKeys;
+    public int keysCollected;
 
-    private void Start()
-    {
-        collectKeys = FindObjectOfType<CollectKeys>();
-    }
     private void Update()
     {
-        if (collectKeys.keysCollected >= KeysToCollect)
+        if (keysCollected >= KeysToCollect)
         {
            doorIsOpen = true; 
         }

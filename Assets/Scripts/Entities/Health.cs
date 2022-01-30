@@ -38,7 +38,7 @@ namespace Entities
 
         protected abstract void Die();
 
-        private int CurrentHealth
+        protected int CurrentHealth
         {
             get => _currentHealth;
             set
