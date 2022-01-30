@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform cam;
+    [SerializeField] private Animator animator;
     private Rigidbody rb;
     private Vector3 movement;
     private Quaternion rotation = Quaternion.identity;
@@ -39,14 +40,20 @@ public class PlayerMovement : MonoBehaviour
        
         if (isWalking)
         {
+            animator.SetBool("IsWalking", true);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             rb.MovePosition(rb.position + moveDir.normalized * moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
 
         // jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            animator.SetTrigger("Jump");
             isGrounded = false;
         }
     }

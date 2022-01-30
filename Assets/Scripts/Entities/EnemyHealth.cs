@@ -5,6 +5,6 @@ public class EnemyHealth : Health
 {
     protected override void Die()
     {
-        print(CurrentHealth);
+        Destroy(gameObject);
     }
 }
