@@ -13,7 +13,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{fbfe7dce-9622-414f-084e-cb27e0b93165}</ProjectGuid>
+    <ProjectGuid>{9354d9ae-33ec-7224-84d8-f911e698fe19}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -52,15 +52,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\UI\ElementTransition.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\UI\HUD\HealthDisplay.cs" />
-     <Compile Include="Assets\Scripts\Entities\Health.cs" />
-     <Compile Include="Assets\Scripts\Utilities\MonoCache.cs" />
+     <Compile Include="Assets\Scripts\Player\Card.cs" />
      <Compile Include="Assets\Scripts\Utilities\TransformExtensions.cs" />
+     <Compile Include="Assets\Scripts\Entities\Health.cs" />
+     <Compile Include="Assets\Scripts\UI\ElementTransition.cs" />
      <Compile Include="Assets\Scripts\Entities\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\GameManagement\SceneUtil.cs" />
+     <Compile Include="Assets\Scripts\Utilities\MonoCache.cs" />
      <Compile Include="Assets\Scripts\Temp-Testing\HealthTester.cs" />
+     <Compile Include="Assets\Scripts\GameManagement\SceneUtil.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\CardInventory.cs" />
+     <Compile Include="Assets\Scripts\UI\HUD\HealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\Entities\BotHealth.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -305,10 +308,10 @@
  <HintPath>E:/Softwares/UnityHub/Hub/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Assets/Plugins/DOTween_1_2_632/DOTween/DOTween.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Assets/Plugins/DOTween_1_2_632/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>E:/Softwares/UnityHub/Hub/2020.3.26f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -656,39 +659,39 @@
  <HintPath>E:/Softwares/UnityHub/Hub/2020.3.26f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Projetos em UNITY/GGJ___2002/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/Projetos em UNITY/GGJ____2022/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DOTween.Modules.csproj">
-      <Project>{f5a7e93e-deca-9c26-9e95-9be6601d2cd6}</Project>
+      <Project>{f024896e-3982-23fe-bf2f-4b06b29fd6df}</Project>
       <Name>DOTween.Modules</Name>
     </ProjectReference>
   </ItemGroup>

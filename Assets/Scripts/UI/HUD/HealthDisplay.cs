@@ -39,7 +39,6 @@ namespace UI.HUD
                 {
                     healthUnitObject[floorHalf].gameObject.SetActive(true);
                     healthUnitObject[floorHalf].sprite = i % 2 == 0 ? halfHealthIcon : fullHealthIcon;
-                    Debug.Log((floorHalf).ToString());
                     continue;
                 }
 

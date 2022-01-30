@@ -1,9 +1,14 @@
-﻿using Utilities;
+﻿using System;
+using UnityEngine.EventSystems;
+using Utilities;
 
 namespace Player
 {
-    public class Inventory : MonoCache
+    public class CardInventory : MonoCache
     {
-        private 
+        private Card[] collectedCards;
+        
+        public event Action<Card> OnCardCollected;
+        
     }
 }
