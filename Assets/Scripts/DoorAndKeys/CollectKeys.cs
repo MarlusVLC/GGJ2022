@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CollectKeys : MonoBehaviour
 {
-    public int keysCollected;
+    private OpenDoor openDoor;
+
+    private void Start()
+    {
+        openDoor = FindObjectOfType<OpenDoor>();
+    }
     private void OnTriggerEnter(Collider collider)
     {
-       if (collider.gameObject.CompareTag("Keys"));
+       if (collider.gameObject.CompareTag("Player"));
        {
-           Destroy(collider.gameObject);
-           keysCollected += 1;
+           Destroy(this.gameObject);
+           openDoor.keysCollected += 1;
        } 
     }
 }
