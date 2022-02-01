@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Personagem
-  m_Shader: {fileID: 4800000, guid: f7e38193b7f064d7380403618fd8b69e, type: 3}
+  m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
   m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _METALLICGLOSSMAP _NORMALMAP _TEXTUREBLENDINGMODE_MULTIPLY
     _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
@@ -20,8 +20,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 840f218756be3e74baef233dad69cf3a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 21d7be11c162c9849a43ba646c8649c2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 99bc69c3ef6228747a8c1ed96e3b8e28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CelCurveTexture:
@@ -93,6 +97,7 @@ Material:
     - _GradientSize: 10
     - _HeightTransition: 0
     - _LightContribution: 0
+    - _LightFalloffSize: 0.0001
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
@@ -123,6 +128,7 @@ Material:
     - _VertexColorsEnabled: 0
     - _ZWrite: 1
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDim: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
