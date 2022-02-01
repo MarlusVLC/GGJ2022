@@ -14,8 +14,8 @@ public class CollectKeys : MonoBehaviour
     {
        if (collider.gameObject.CompareTag("Player"));
        {
+           openDoor.CollectKey();
            Destroy(this.gameObject);
-           openDoor.keysCollected += 1;
        } 
     }
 }

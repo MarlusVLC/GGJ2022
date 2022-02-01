@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField] private int KeysToCollect;
+    [field: SerializeField] public int KeysToCollect { get; private set;}
     [SerializeField] private bool doorIsOpen = false;
     public int keysCollected;
+
+    public event Action<int> OnCollectKey;
 
     private void Update()
     {
@@ -27,10 +30,16 @@ public class OpenDoor : MonoBehaviour
             if (doorIsOpen)
             {
                 // go to next level
+                Debug.Log("Level finished :}");
             }
             else
             {
             }
         }
+    }
+
+    public void CollectKey()
+    {
+        OnCollectKey?.Invoke(++keysCollected);
     }
 }
