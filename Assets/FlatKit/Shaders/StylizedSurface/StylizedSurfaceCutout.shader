@@ -2,7 +2,7 @@
 {
     Properties
     {
-        [MainColor] _Color ("Color", Color) = (1,1,1,1)
+        [MainColor] _BaseColor ("Color", Color) = (1,1,1,1)
         
         [Space(10)]
         [KeywordEnum(None, Single, Steps, Curve)]_CelPrimaryMode("Cel Shading Mode", Float) = 1
@@ -48,20 +48,20 @@
         [Space(10)]
         [Toggle(DR_VERTEX_COLORS_ON)] _VertexColorsEnabled("Enable Vertex Colors", Int) = 0
 
-        //_FLAT_KIT_BUILT_IN_BEGIN_
+        /*_FLAT_KIT_BUILT_IN_BEGIN_
         _LightContribution("[FOLDOUT(Advanced Lighting){4}]Light Color Contribution", Range(0, 1)) = 0
-        //_FLAT_KIT_BUILT_IN_END_
-        /*_FLAT_KIT_URP_BEGIN_
+        _FLAT_KIT_BUILT_IN_END_*/
+        //_FLAT_KIT_URP_BEGIN_
         _LightContribution("[FOLDOUT(Advanced Lighting){5}]Light Color Contribution", Range(0, 1)) = 0
         _LightFalloffSize("Falloff size (point / spot)", Range(0.0001, 1)) = 0.0001
-        _FLAT_KIT_URP_END_*/
+        //_FLAT_KIT_URP_END_
 
         // Used to provide light direction to cel shading if all light in the scene is baked.
-        [Header(Override light direction)]
-        [Toggle]_OverrideLightmapDir("[DR_ENABLE_LIGHTMAP_DIR]Enable", Int) = 0
-        _LightmapDirectionPitch("Pitch", Range(0, 360)) = 0
-        _LightmapDirectionYaw("Yaw", Range(0, 360)) = 0
-        [HideInInspector] _LightmapDirection("Override Light Direction", Vector) = (0, 1, 0, 0)
+        [Space(5)]
+        [Toggle(DR_ENABLE_LIGHTMAP_DIR)]_OverrideLightmapDir("Override light direction", Int) = 0
+        _LightmapDirectionPitch("[DR_ENABLE_LIGHTMAP_DIR]Pitch", Range(0, 360)) = 0
+        _LightmapDirectionYaw("[DR_ENABLE_LIGHTMAP_DIR]Yaw", Range(0, 360)) = 0
+        [HideInInspector] _LightmapDirection("Direction", Vector) = (0, 1, 0, 0)
 
         [KeywordEnum(None, Multiply, Color)] _UnityShadowMode ("[FOLDOUT(Unity Built-in Shadows){4}]Mode", Float) = 0
         _UnityShadowPower("[_UNITYSHADOWMODE_MULTIPLY]Power", Range(0, 1)) = 0.2
@@ -69,7 +69,7 @@
         _UnityShadowSharpness("Sharpness", Range(1, 10)) = 1.0
         
         [Space(10)]
-        [MainTexture] _MainTex ("[FOLDOUT(Texture maps){4}]Color (RGB) Alpha (A)", 2D) = "white" {}
+        [MainTexture] _BaseMap ("[FOLDOUT(Texture maps){4}]Color (RGB) Alpha (A)", 2D) = "white" {}
         _Cutoff ("Base Alpha cutoff", Range (0, 1)) = .5
         _TextureImpact("Texture Impact", Range(0, 1)) = 1.0
 
@@ -87,10 +87,21 @@
 
         // Editmode props
         [HideInInspector] _QueueOffset("Queue offset", Float) = 0.0
+        
+        // ObsoleteProperties
+        [HideInInspector] _MainTex("BaseMap", 2D) = "white" {}
+        [HideInInspector] _Color("Base Color", Color) = (1, 1, 1, 1)
     }
 
     // -----------------------------------------------
-    //_FLAT_KIT_BUILT_IN_BEGIN_
+    //_FLAT_KIT_URP_BEGIN_
+    // This shader is deprecated in URP: please use StylizedSurface.
+    FallBack "FlatKit/Stylized Surface"
+    //_FLAT_KIT_URP_END_
+    // -----------------------------------------------
+
+    // -----------------------------------------------
+    /*_FLAT_KIT_BUILT_IN_BEGIN_
     SubShader
     {
         Tags {
@@ -124,14 +135,7 @@
         ENDCG
     }
     FallBack "Transparent/Cutout/Diffuse"
-    //_FLAT_KIT_BUILT_IN_END_
-    // -----------------------------------------------
-
-    // -----------------------------------------------
-    /*_FLAT_KIT_URP_BEGIN_
-    // This shader is deprecated in URP: please use StylizedSurface.
-    FallBack "FlatKit/Stylized Surface"
-    _FLAT_KIT_URP_END_*/
+    _FLAT_KIT_BUILT_IN_END_*/
     // -----------------------------------------------
 
     CustomEditor "StylizedSurfaceEditor"
