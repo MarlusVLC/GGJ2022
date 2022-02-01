@@ -15,7 +15,7 @@ namespace UI.HUD
         [SerializeField] private CardInventory cardInventory;
         [SerializeField] private Image[] cardIcons;
 
-        private Outline _outline;
+        private Shadow _outline;
         private void Awake()
         {
             UpdateAvailability();
@@ -53,10 +53,10 @@ namespace UI.HUD
             if (i == -1) return;
             foreach (Image icon in cardIcons)
             {
-                _outline = icon.GetComponentInParent<Outline>();
+                _outline = icon.GetComponentInParent<Shadow>();
                 _outline.enabled = false;
             }
-            _outline = cardIcons[i].GetComponentInParent<Outline>();
+            _outline = cardIcons[i].GetComponentInParent<Shadow>();
             _outline.enabled = true;
             selectedCard.sprite = cardIcons[i].sprite;
         }
