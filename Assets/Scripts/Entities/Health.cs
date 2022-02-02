@@ -87,5 +87,7 @@ namespace Entities
             get => _isImmortal;
             set => _isImmortal = value;
         }
+        
+        
     }
 }

@@ -69,4 +69,16 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    public float MoveSpeed
+    {
+        get => moveSpeed;
+        set => moveSpeed = value;
+    }
+
+    public float JumpForce
+    {
+        get => jumpForce;
+        set => jumpForce = value;
+    }
 }

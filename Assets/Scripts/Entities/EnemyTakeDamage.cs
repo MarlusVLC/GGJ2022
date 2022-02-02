@@ -6,7 +6,7 @@ public class EnemyTakeDamage : MonoBehaviour
 {
     private EnemyHealth enemyHealth;
     [SerializeField] private GameObject cone;
-    [SerializeField] private int playerDamage;
+    private PlayerAttack _playerAttack;
     private bool tookDamage = false;
 
     private void Start()
@@ -16,9 +16,10 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("AttackCone") && cone.activeSelf)
+        // if (collider.gameObject.CompareTag("AttackCone") && cone.activeSelf)
+        if (collider.transform.parent.TryGetComponent(out _playerAttack) && cone.activeSelf)
         {
-            enemyHealth.TakeDamage(playerDamage);
+            enemyHealth.TakeDamage(_playerAttack.AttackStrength);
             tookDamage = true;
             enemyHealth.IsImmortal = true;
         }

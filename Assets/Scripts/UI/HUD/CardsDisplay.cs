@@ -23,14 +23,14 @@ namespace UI.HUD
 
         private void OnEnable()
         {
-            cardInventory.OnCardCollected += UpdateAvailability;
-            cardInventory.OnChooseCard += UpdateSelection;
+            cardInventory.OnCollectionModified += UpdateAvailability;
+            cardInventory.OnChosenCardChanged += UpdateSelection;
         }
 
         private void OnDisable()
         {
-            cardInventory.OnCardCollected -= UpdateAvailability;
-            cardInventory.OnChooseCard -= UpdateSelection;
+            cardInventory.OnCollectionModified -= UpdateAvailability;
+            cardInventory.OnChosenCardChanged -= UpdateSelection;
         }
 
         private void UpdateAvailability()
@@ -50,15 +50,20 @@ namespace UI.HUD
 
         private void UpdateSelection(int i)
         {
-            if (i == -1) return;
             foreach (Image icon in cardIcons)
             {
                 _outline = icon.GetComponentInParent<Shadow>();
                 _outline.enabled = false;
+                selectedCard.sprite = null;
             }
-            _outline = cardIcons[i].GetComponentInParent<Shadow>();
-            _outline.enabled = true;
-            selectedCard.sprite = cardIcons[i].sprite;
+
+            if (i != -1)
+            {
+                _outline = cardIcons[i].GetComponentInParent<Shadow>();
+                _outline.enabled = true;
+                selectedCard.sprite = cardIcons[i].sprite;
+            }
+
         }
     } 
 }

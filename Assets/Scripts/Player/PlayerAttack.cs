@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject cone;
     [SerializeField] private Animator animator;
     [SerializeField] private float attackSpeed;
+    [SerializeField] private int attackStrength = 1;
     private bool isAttacking;
 
     private void Update()
@@ -32,5 +33,17 @@ public class PlayerAttack : MonoBehaviour
         animator.SetTrigger("Attack");
         yield return new WaitForSeconds(attackSpeed);
         isAttacking = false;
+    }
+
+    public float AttackSpeed
+    {
+        get => attackSpeed;
+        set => attackSpeed = value;
+    }
+
+    public int AttackStrength
+    {
+        get => attackStrength;
+        set => attackStrength = value;
     }
 }

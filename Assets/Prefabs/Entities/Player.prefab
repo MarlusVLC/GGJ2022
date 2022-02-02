@@ -193,6 +193,7 @@ MonoBehaviour:
   cone: {fileID: 4615867354047262475}
   animator: {fileID: 0}
   attackSpeed: 0
+  attackStrength: 1
 --- !u!114 &9162008873452455304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedCards: []
+  playerHealth: {fileID: 5661090368055547781}
+  playerMovement: {fileID: -174182736745853183}
+  playerAttack: {fileID: 4960380822200468412}
+  cardUseInput: 114
 --- !u!114 &5661090368055547781
 MonoBehaviour:
   m_ObjectHideFlags: 0
