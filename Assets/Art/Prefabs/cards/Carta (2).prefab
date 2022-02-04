@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 337555988800155373}
   - component: {fileID: 3675191246113087816}
   - component: {fileID: 1505347685474030978}
+  - component: {fileID: 2642634533346811948}
   m_Layer: 0
   m_Name: Carta (2)
   m_TagString: Untagged
@@ -81,3 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2642634533346811948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145301677474935895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedModifier: 0.5
+  jumpModifier: 1
+  healthModifier: 0
+  damageModifier: 2
+  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

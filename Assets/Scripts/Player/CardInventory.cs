@@ -9,6 +9,7 @@ namespace Player
     public class CardInventory : MonoCache
     {
         [SerializeField] private List<Card> collectedCards;
+        [SerializeField] private int maximumCards;
         [Header("Player attributes")]
         [SerializeField] private Health playerHealth;
         [SerializeField] private PlayerMovement playerMovement;
@@ -32,7 +33,7 @@ namespace Player
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out Card card) && collectedCards.Count < 5)
+            if (other.TryGetComponent(out Card card) && collectedCards.Count < maximumCards)
             {
                 collectedCards.Add(card);
                 OnCollectionModified?.Invoke();
@@ -63,8 +64,8 @@ namespace Player
                 Debug.Log(_currentCardIndex.ToString());
                 Debug.Log(collectedCards.Count.ToString());
                 Card chosenCard = collectedCards[_currentCardIndex];
-                playerMovement.MoveSpeed *= chosenCard.SpeedModifier;
-                playerMovement.JumpForce *= chosenCard.JumpModifier;
+                playerMovement.MultiplyMoveSpeed(chosenCard.SpeedModifier*2);
+                playerMovement.MultiplyJumpForce(chosenCard.JumpModifier*2);
                 playerHealth.RecoverHealth(chosenCard.HealthModifier*2);
                 playerAttack.AttackStrength += chosenCard.DamageModifier;
                 RemoveCard(chosenCard);
@@ -73,7 +74,7 @@ namespace Player
             }
         }
 
-        private void AddCad(Card card)
+        private void AddCard(Card card)
         {
             collectedCards.Add(card);
             OnCollectionModified?.Invoke();

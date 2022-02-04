@@ -13,13 +13,20 @@ public class PlayerMovement : MonoBehaviour
     private float turnSpeed = 20f;
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
-    private float moveSpeed = 5f;
-    private float jumpForce = 5f;
+    private const float moveSpeed = 5f;
+    private float currentMoveSpeed;
+    private const float jumpForce = 5f;
+    private float currentJumpForce;
     private bool isGrounded;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();        
+        rb = GetComponent<Rigidbody>();
+        currentMoveSpeed = moveSpeed;
+        currentJumpForce = jumpForce;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -42,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsWalking", true);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            rb.MovePosition(rb.position + moveDir.normalized * moveSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + moveDir.normalized * currentMoveSpeed * Time.deltaTime);
         }
         else
         {
@@ -52,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         // jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(transform.up * currentJumpForce, ForceMode.Impulse);
             animator.SetTrigger("Jump");
             isGrounded = false;
         }
@@ -73,12 +80,18 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed
     {
         get => moveSpeed;
-        set => moveSpeed = value;
     }
 
     public float JumpForce
     {
         get => jumpForce;
-        set => jumpForce = value;
     }
+
+    public float CurrentMoveSpeed => currentMoveSpeed;
+
+    public void MultiplyMoveSpeed(float multiplier) => currentMoveSpeed = multiplier * moveSpeed;
+
+    public float CurrentJumpForce => currentJumpForce;
+
+    public void MultiplyJumpForce(float multiplier) => currentJumpForce = multiplier * jumpForce;
 }

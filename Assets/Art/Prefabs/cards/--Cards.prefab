@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
+  speedModifier: 1
+  jumpModifier: 1
   healthModifier: 0
-  jumpModifier: 0
   damageModifier: 0
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955739467764261
@@ -253,9 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
+  speedModifier: 2
+  jumpModifier: 0.5
   healthModifier: 0
-  jumpModifier: 0
   damageModifier: 0
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955739848176694
@@ -327,14 +327,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9b39170c2cd604b978c12d833ba971, type: 3}
---- !u!1 &4929226177433188652 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3429764476468612378, guid: 9c9b39170c2cd604b978c12d833ba971, type: 3}
-  m_PrefabInstance: {fileID: 7777955739848176694}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5702667338672137110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2653508801631229856, guid: 9c9b39170c2cd604b978c12d833ba971, type: 3}
+  m_PrefabInstance: {fileID: 7777955739848176694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4929226177433188652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3429764476468612378, guid: 9c9b39170c2cd604b978c12d833ba971, type: 3}
   m_PrefabInstance: {fileID: 7777955739848176694}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &323011677
@@ -350,23 +350,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005310713, y: 0.00010290543, z: 0.0077959085}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7777955739848176688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929226177433188652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955740037791658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,10 +454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
+  speedModifier: 1
+  jumpModifier: 2
   healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
+  damageModifier: -1
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955740582692991
 PrefabInstance:
@@ -580,10 +563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: 1
+  damageModifier: -1
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955740636916986
 PrefabInstance:
@@ -654,14 +637,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410ebdda17f6147488e3cf022684e1ef, type: 3}
---- !u!1 &3365501467591698625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4991237748242531387, guid: 410ebdda17f6147488e3cf022684e1ef, type: 3}
-  m_PrefabInstance: {fileID: 7777955740636916986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2738040605114086011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5624891365406285441, guid: 410ebdda17f6147488e3cf022684e1ef, type: 3}
+  m_PrefabInstance: {fileID: 7777955740636916986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3365501467591698625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4991237748242531387, guid: 410ebdda17f6147488e3cf022684e1ef, type: 3}
   m_PrefabInstance: {fileID: 7777955740636916986}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1279466649
@@ -689,10 +672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: -1
+  damageModifier: 1
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955740705581768
 PrefabInstance:
@@ -786,23 +769,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005310713, y: 0.00010290543, z: 0.0077959085}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7777955740705581770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7211446386464267935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &7777955740735961762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -907,9 +873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
+  speedModifier: 1
+  jumpModifier: 2
+  healthModifier: -2
   damageModifier: 0
   icon: {fileID: 21300000, guid: 35302c8f463cfb14eb14e3c5207cd617, type: 3}
 --- !u!1001 &7777955740862288099
@@ -1016,10 +982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
-  healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: 2
+  damageModifier: -2
   icon: {fileID: 21300000, guid: 3f1cc7dc2a627144fb68302d9ecc566c, type: 3}
 --- !u!1001 &7777955740951584181
 PrefabInstance:
@@ -1125,8 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf3da8f3208499e861e90c62dd36697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
+  speedModifier: 2
+  jumpModifier: 1
   healthModifier: 0
-  jumpModifier: 0
-  damageModifier: 0
+  damageModifier: -1
   icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
