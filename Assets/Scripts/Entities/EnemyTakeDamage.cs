@@ -5,31 +5,29 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
     private EnemyHealth enemyHealth;
+    private PlayerAttack playerAttack;
     [SerializeField] private GameObject cone;
-    [SerializeField] private int playerDamage;
-    private bool tookDamage = false;
+    private bool canTakeDamage = false;
 
     private void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
+        playerAttack = FindObjectOfType<PlayerAttack>();
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("AttackCone") && cone.activeSelf)
+        if (collider.gameObject.CompareTag("AttackCone") && cone.activeSelf && !canTakeDamage)
         {
-            enemyHealth.TakeDamage(playerDamage);
-            tookDamage = true;
-            enemyHealth.IsImmortal = true;
+            StartCoroutine(TakeDamageSequence());
         }
     }
 
-    private void OnTriggerExit(Collider collider)
+    private IEnumerator TakeDamageSequence()
     {
-        if (collider.gameObject.CompareTag("AttackCone"))
-        {
-            tookDamage = false;
-            enemyHealth.IsImmortal = false;
-        }
+        enemyHealth.TakeDamage(playerAttack.damage);
+        canTakeDamage = true;
+        yield return new WaitForSeconds(0.2f);
+        canTakeDamage = false;
     }
 }

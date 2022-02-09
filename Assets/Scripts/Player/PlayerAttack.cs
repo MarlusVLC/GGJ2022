@@ -6,31 +6,26 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private GameObject cone;
     [SerializeField] private Animator animator;
+    public int damage = 1;
     [SerializeField] private float attackSpeed;
     private bool isAttacking;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(Attack());
-        }
-
-        if (isAttacking)
-        {
-            cone.SetActive(true);
-        } 
-        else
-        {
-            cone.SetActive(false);
         }
     }    
 
     private IEnumerator Attack()
     {
-        isAttacking = true;
-        animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(attackSpeed);
-        isAttacking = false;
+        animator.SetTrigger("Attack");  // starts animation
+        isAttacking = true; // can't attack while attacking
+        yield return new WaitForSeconds(attackSpeed - 0.2f);
+        cone.SetActive(true);           // activates attack cone
+        yield return new WaitForSeconds(0.2f);
+        cone.SetActive(false);          // deactivates attack cone
+        isAttacking = false;            // can attack again
     }
 }

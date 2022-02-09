@@ -191,8 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cone: {fileID: 4615867354047262475}
-  animator: {fileID: 0}
-  attackSpeed: 0
+  animator: {fileID: 4511037813886324548}
+  damage: 1
+  attackSpeed: 0.575
 --- !u!114 &9162008873452455304
 MonoBehaviour:
   m_ObjectHideFlags: 0
