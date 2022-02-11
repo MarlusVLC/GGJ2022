@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164744943102554772}
   m_Layer: 0
-  m_Name: Cavalo_Vermelha
+  m_Name: Cavalo_Vermelho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c63d816d6bd43034eab150b4cd9a66ca, type: 2}
+  - {fileID: 2100000, guid: f2f06aa9e718f284ba967f8ad10d2ef4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
